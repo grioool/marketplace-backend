@@ -17,6 +17,8 @@ jobs:
       uses: mr-smithers-excellent/docker-build-push@v4
       with:
         image: ${{ secrets.DOCKER_HUB_USERNAME }}/marketplace-backend
+        tags: latest
         registry: docker.io
         username: ${{ secrets.DOCKER_HUB_USERNAME }}
         password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+        dockerfile: backend/web/Dockerfile.ci
